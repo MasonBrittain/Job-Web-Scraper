@@ -1,5 +1,7 @@
 # Job Market Intelligence Pipeline
 
+[![CI](https://github.com/MasonBrittain/Job-Web-Scraper/actions/workflows/ci.yml/badge.svg)](https://github.com/MasonBrittain/Job-Web-Scraper/actions/workflows/ci.yml)
+
 A small but production-shaped data engineering project: it snapshots tech job
 postings every day from public job-board APIs, models them into an analytical
 warehouse, and serves a live dashboard of skill demand across companies.
