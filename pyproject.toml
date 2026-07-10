@@ -1,0 +1,11 @@
+[project]
+name = "jobintel"
+version = "0.1.0"
+description = "Job postings intelligence pipeline: Greenhouse/Lever ingestion -> DuckDB -> dbt -> Streamlit"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+include = ["jobintel*"]
+
+[tool.dagster]
+module_name = "jobintel.dagster_defs.definitions"

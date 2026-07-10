@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Data artifacts (regenerable by running the pipeline)
+data/raw/
+data/warehouse/
+*.duckdb
+*.duckdb.wal
+
+# dbt
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+
+# Dagster
+.dagster_home/
+.logs_queue/
+.telemetry/
+dbt_project/.user.yml

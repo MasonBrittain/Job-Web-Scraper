@@ -1,0 +1,10 @@
+# dbt is always executed with dbt_project/ as the working directory
+# (dagster-dbt does this automatically; for manual runs, cd here first)
+# so the relative paths below resolve against this folder.
+jobintel:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/warehouse/jobintel.duckdb
+      threads: 4

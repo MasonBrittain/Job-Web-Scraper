@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: stg_job_postings
+    description: Typed, deduplicated snapshots of raw postings.
+    columns:
+      - name: source
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["greenhouse", "lever"]
+      - name: company
+        tests: [not_null]
+      - name: job_id
+        tests: [not_null]
+      - name: ingest_date
+        tests: [not_null]
+
+  - name: fct_job_postings
+    description: One row per unique posting with observation lifecycle.
+    columns:
+      - name: posting_key
+        tests: [unique, not_null]
+      - name: title
+        tests: [not_null]
+      - name: first_seen_date
+        tests: [not_null]
+
+  - name: fct_job_skills
+    description: Posting-to-skill matches from the skills seed taxonomy.
+    columns:
+      - name: posting_key
+        tests: [not_null]
+      - name: skill
+        tests: [not_null]
+
+seeds:
+  - name: skills
+    description: Skill taxonomy; `pattern` is a regex applied to lowercased descriptions.
+    columns:
+      - name: skill
+        tests: [unique, not_null]
+      - name: pattern
+        tests: [not_null]

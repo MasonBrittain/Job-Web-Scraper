@@ -1,0 +1,10 @@
+dagster
+dagster-webserver
+dagster-dbt
+dbt-duckdb
+duckdb
+pandas
+pyarrow
+requests
+streamlit
+plotly

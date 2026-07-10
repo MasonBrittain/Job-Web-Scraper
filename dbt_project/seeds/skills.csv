@@ -1,0 +1,43 @@
+skill,category,pattern
+Python,language,\bpython\b
+SQL,language,\bsql\b
+Java,language,\bjava\b
+Scala,language,\bscala\b
+Go,language,\bgolang\b
+Rust,language,\brust\b
+TypeScript,language,\btypescript\b
+C++,language,c\+\+
+Spark,data processing,\bspark\b
+Hadoop,data processing,\bhadoop\b
+Kafka,data processing,\bkafka\b
+Flink,data processing,\bflink\b
+Pandas,data processing,\bpandas\b
+Airflow,orchestration,\bairflow\b
+Dagster,orchestration,\bdagster\b
+Prefect,orchestration,\bprefect\b
+dbt,orchestration,\bdbt\b
+Snowflake,warehouse,\bsnowflake\b
+Databricks,warehouse,\bdatabricks\b
+Redshift,warehouse,\bredshift\b
+BigQuery,warehouse,\bbigquery\b
+DuckDB,warehouse,\bduckdb\b
+PostgreSQL,database,\bpostgres(ql)?\b
+MySQL,database,\bmysql\b
+MongoDB,database,\bmongodb\b
+Cassandra,database,\bcassandra\b
+Redis,database,\bredis\b
+Elasticsearch,database,\belasticsearch\b
+AWS,cloud,\baws\b
+GCP,cloud,(\bgcp\b|google cloud)
+Azure,cloud,\bazure\b
+Docker,devops,\bdocker\b
+Kubernetes,devops,(\bkubernetes\b|\bk8s\b)
+Terraform,devops,\bterraform\b
+CI/CD,devops,ci/cd
+Tableau,analytics,\btableau\b
+Power BI,analytics,power bi
+Looker,analytics,\blooker\b
+Machine Learning,ml,machine learning
+TensorFlow,ml,\btensorflow\b
+PyTorch,ml,\bpytorch\b
+ETL,data processing,\betl\b

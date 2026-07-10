@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: landing
+    description: >
+      Bronze layer: raw job postings landed as hive-partitioned parquet by the
+      ingestion step. dbt-duckdb reads the files in place via external_location;
+      nothing is copied into the warehouse until staging.
+    tables:
+      - name: job_postings
+        meta:
+          external_location: >-
+            read_parquet('../data/raw/job_postings/*/*/*/data.parquet',
+                         hive_partitioning = true, union_by_name = true)
+        columns:
+          - name: job_id
+            description: Posting id as assigned by the source ATS.
+          - name: ingest_date
+            description: Hive partition key; the UTC date the snapshot was taken.
