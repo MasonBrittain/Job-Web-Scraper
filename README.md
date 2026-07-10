@@ -88,24 +88,3 @@ cd dbt_project; ..\.venv\Scripts\dbt build --profiles-dir .; cd ..
 .venv\Scripts\streamlit run dashboard/app.py
 ```
 
-## Failure modes considered
-
-- **A board disappears** (company changes ATS): logged, skipped, surfaced in
-  asset metadata; an empty board is treated as suspicious rather than as
-  "zero openings".
-- **A source changes its payload shape**: `union_by_name` absorbs additive
-  changes; dbt not-null/accepted-values tests fail loudly on breaking ones.
-- **Duplicate ingestion**: partition overwrite + staging dedup + a uniqueness
-  test on the posting key make double-runs harmless.
-- **Clock/timezone drift**: all timestamps UTC; the ingest date is the UTC
-  snapshot date, so "new today" is well-defined regardless of where it runs.
-
-## Honest limitations
-
-- Skill extraction is regex over descriptions — good enough for trend lines,
-  but it can't tell "required" from "nice to have". An NLP pass would be the
-  next iteration.
-- History starts the day you first run it; there is no way to backfill days
-  the APIs were never asked about.
-- DuckDB is single-node by design; the point here is the modeling and
-  orchestration patterns, not scale.
