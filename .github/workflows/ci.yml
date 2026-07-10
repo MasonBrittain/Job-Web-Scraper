@@ -19,7 +19,8 @@ jobs:
         run: pip install requests pandas pyarrow pytest dbt-duckdb
 
       - name: Run unit tests
-        run: pytest -q
+        # `python -m` puts the repo root on sys.path so `jobintel` imports
+        run: python -m pytest -q
 
       - name: Validate dbt project
         run: dbt parse --profiles-dir .
